@@ -69,7 +69,7 @@
         .pagination button:disabled { background: #2a2a2a; color: #666; border-color: #666; cursor: not-allowed; box-shadow: none; }
         footer { text-align: center; padding: 40px; background: #1a1a1a; border-top: 1px solid #c0c0c0; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5); }
         footer p { font-family: 'Poppins', sans-serif; font-size: 1em; color: #b0b0b0; }
-        .changenow-swap-container { max-width: 480px; margin: 20px auto; background: #1a1a1a; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(192, 192, 192, 0.3); }
+        .dexscreener-swap-container { max-width: 480px; margin: 20px auto; background: #1a1a1a; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(192, 192, 192, 0.3); }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -130,12 +130,11 @@
         <div id="buy" class="page-section">
             <div class="buy-info">
                 <h3>Buy $RRR Now</h3>
-                <p>Swap SOL for $RRR using ChangeNOW below:</p>
-                <div class="changenow-swap-container">
-                    <iframe id="changenow-widget" src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=1&backgroundColor=1a1a1a&darkMode=true&from=sol&horizontal=false&lang=en-US&link_id=YOUR_LINK_ID&locales=true&logo=false&primaryColor=c0c0c0&to=89ajMNVTsoRSwwrvbFiXZPLR9gzHWzyJUyCmw3nDdde7" style="height: 356px; width: 100%; border: none;"></iframe>
-                    <script defer type="text/javascript" src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"></script>
+                <p>Swap for $RRR directly below:</p>
+                <div class="dexscreener-swap-container">
+                    <iframe src="https://dexscreener.com/swap?chainId=solana&inputMint=So11111111111111111111111111111111111111112&outputMint=89ajMNVTsoRSwwrvbFiXZPLR9gzHWzyJUyCmw3nDdde7&embed=1&theme=dark" style="width: 100%; height: 500px; border: none; border-radius: 8px;"></iframe>
                 </div>
-                <p>Connect your wallet (e.g., Phantom) via the widget to trade. Need help? Check our <a href="#faq">FAQ</a>.</p>
+                <p>Connect your wallet (e.g., Phantom) via the widget to swap for $RRR.</p>
             </div>
         </div>
         <div id="faq" class="page-section">
