@@ -8,10 +8,20 @@
       window.onload = function () {
         const urlParams = new URLSearchParams(window.location.search);
         const redirect = urlParams.get("redirect_link");
+        const wallet = urlParams.get("wallet");
+
         if (redirect) {
+          let finalUrl = decodeURIComponent(redirect);
+          if (wallet) {
+            // Inject the wallet address back into the URI
+            finalUrl += (finalUrl.includes("?") ? "&" : "?") + "wallet=" + wallet;
+          }
+
           setTimeout(() => {
-            window.location.href = decodeURIComponent(redirect);
-          }, 1500); // Wait 1.5s before bouncing back to app
+            window.location.href = finalUrl;
+          }, 1500); // Wait 1.5s before bouncing back to the app
+        } else {
+          document.body.innerHTML = "<h2 style='text-align: center; margin-top: 50px;'>❌ Missing redirect link</h2>";
         }
       };
     </script>
