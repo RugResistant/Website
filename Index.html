@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Connecting Wallet...</title>
-  <script>
-    window.onload = function () {
-      const redirect = new URLSearchParams(window.location.search).get('redirect_link');
-      if (redirect) {
-        setTimeout(() => {
-          window.location.href = redirect;
-        }, 1500); // ⏱️ 1.5 sec delay to allow Phantom to show UI
-      } else {
-        document.body.innerText = "Missing redirect link";
-      }
-    };
-  </script>
-</head>
-<body>
-  <p>Connecting to your wallet...</p>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting to Signal App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get("redirect_link");
+        if (redirect) {
+          setTimeout(() => {
+            window.location.href = decodeURIComponent(redirect);
+          }, 1500); // Wait 1.5s before bouncing back to app
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h2 style="text-align: center; margin-top: 50px;">🔗 Connecting to your wallet...</h2>
+    <p style="text-align: center;">If nothing happens, please open Phantom manually.</p>
+  </body>
 </html>
